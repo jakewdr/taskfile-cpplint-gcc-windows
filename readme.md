@@ -8,6 +8,8 @@ Cpplint for linting = [link](https://github.com/cpplint/cpplint?tab=readme-ov-fi
 
 ### From the command line
 
+Note this requires [python](https://www.python.org/downloads/) and [chocolatey](https://chocolatey.org/install) to be installed
+
     start https://tinyurl.com/install-c
 
     choco install go-task
