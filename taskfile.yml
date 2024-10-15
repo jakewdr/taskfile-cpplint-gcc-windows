@@ -1,15 +1,27 @@
 version: '3'
 
+vars:
+    fileName: main.c
+    executableName: executable.exe
+
 tasks:
     run:
+        desc: 
+            Lint, compiles and runs a c file
         cmds:
             - task lint
             - task compile
-            - powershell start out/executable.exe
+            - powershell start out/"{{.executableName}}"
+
     compile:
+        desc:
+            Creates an out folder if it doesn't exist and then runs the GCC compiler
         cmds:
-            - powershell New-Item -ItemType Directory -Force -Path out/
-            - gcc -o out/executable.exe src/main.c
+            - powershell md -Force out/
+            - gcc -o out/"{{.executableName}}" src/"{{.fileName}}"
+
     lint:
+        desc:
+            Lints the c file with cpplint and the cpplint.cfg file
         cmds:
-            - cpplint --config="cpplint.cfg" main.c
+            - cpplint --config="cpplint.cfg" src/"{{.fileName}}"
