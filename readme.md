@@ -6,6 +6,14 @@ Taskfile for command line scripts = [link](https://taskfile.dev/installation/)
 
 Cpplint for linting = [link](https://github.com/cpplint/cpplint?tab=readme-ov-file#installation)
 
+### From the command line
+
+    start https://tinyurl.com/install-c
+
+    choco install go-task
+
+    pip install cpplint
+
 ## Using the project
 
 To compile the c file and run the executable simply enter:
