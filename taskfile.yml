@@ -1,0 +1,14 @@
+version: '3'
+
+tasks:
+    run:
+        cmds:
+            - task lint
+            - task compile
+            - powershell start out/executable.exe
+    compile:
+        cmds:
+            - gcc -o out/executable.exe main.c
+    lint:
+        cmds:
+            - cpplint --config="cpplint.cfg" main.c
