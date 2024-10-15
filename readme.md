@@ -8,7 +8,7 @@ Cpplint for linting = [link](https://github.com/cpplint/cpplint?tab=readme-ov-fi
 
 ## Using the project
 
-To compile and run the c file simply enter
+To compile the c file and run the executable simply enter:
 
     task run
 
