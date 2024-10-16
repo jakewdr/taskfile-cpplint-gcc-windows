@@ -1,14 +1,14 @@
 ## Requirements
 
-GCC and other important C resources = [link](https://installc.org/)
+*GCC and other important C resources* = [link](https://installc.org/)
 
-Taskfile for command line scripts = [link](https://taskfile.dev/installation/)
+*Taskfile for command line scripts* = [link](https://taskfile.dev/installation/)
 
-Cpplint for linting = [link](https://github.com/cpplint/cpplint?tab=readme-ov-file#installation)
+*Cpplint for linting* = [link](https://github.com/cpplint/cpplint?tab=readme-ov-file#installation)
 
 ### From the command line
 
-Note this requires [python](https://www.python.org/downloads/) and [chocolatey](https://chocolatey.org/install) to be installed
+Note this requires [python 3](https://www.python.org/downloads/) and [chocolatey](https://chocolatey.org/install) to be installed
 
     start https://tinyurl.com/install-c
 
@@ -18,7 +18,7 @@ Note this requires [python](https://www.python.org/downloads/) and [chocolatey](
 
 ## Using the project
 
-To compile the c file and run the executable simply enter:
+To compile the c file and run the executable simply enter the following into the command line:
 
     task run
 
