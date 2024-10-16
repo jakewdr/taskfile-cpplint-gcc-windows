@@ -17,11 +17,11 @@ tasks:
         desc:
             Creates an out folder if it doesn't exist and then runs the GCC compiler
         cmds:
-            - powershell md -Force out/
+            - powershell md -Force out/ | powershell Out-Null
             - gcc -o out/"{{.executableName}}" src/"{{.fileName}}"
 
     lint:
         desc:
             Lints the c file with cpplint and the cpplint.cfg file
         cmds:
-            - cpplint --config="cpplint.cfg" src/"{{.fileName}}"
+            - cpplint src/"{{.fileName}}"
