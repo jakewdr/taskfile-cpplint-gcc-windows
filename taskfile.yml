@@ -1,4 +1,4 @@
-version: '3'
+version: "3.17"
 
 vars:
     fileName: main.c
@@ -6,11 +6,10 @@ vars:
 
 tasks:
     run:
+        deps: [lint, compile]
         desc: 
             Lint, compiles and runs a c file
         cmds:
-            - task lint
-            - task compile
             - powershell start out/"{{.executableName}}"
 
     compile:
