@@ -1,5 +1,3 @@
-// Copyright [year] <Copyright Owner>
-
 # include <stdio.h>
 # include <stdlib.h>
 

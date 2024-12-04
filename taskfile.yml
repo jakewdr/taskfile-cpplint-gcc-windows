@@ -18,7 +18,7 @@ tasks:
         cmds:
             - powershell md -Force out/ | powershell Out-Null
             - powershell taskkill /f /im "{{.executableName}}" | powershell Out-Null
-            - ccache gcc -o out/"{{.executableName}}" src/"{{.fileName}}"
+            - ccache gcc -o out/"{{.executableName}}" src/"{{.fileName}}" -O0
 
     dist:
         desc:
