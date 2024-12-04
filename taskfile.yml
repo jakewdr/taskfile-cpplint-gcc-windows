@@ -18,8 +18,15 @@ tasks:
         cmds:
             - powershell md -Force out/ | powershell Out-Null
             - powershell taskkill /f /im "{{.executableName}}" | powershell Out-Null
-            - gcc -o out/"{{.executableName}}" src/"{{.fileName}}"
+            - ccache gcc -o out/"{{.executableName}}" src/"{{.fileName}}"
 
+    dist:
+        desc:
+            Creates an optimised output executable
+        cmds:
+            - powershell md -Force dist/ | powershell Out-Null
+            - ccache gcc -o dist/"{{.executableName}}" src/"{{.fileName}}" -O2
+        
     lint:
         desc:
             Lints the c file with cpplint and the cpplint.cfg file
