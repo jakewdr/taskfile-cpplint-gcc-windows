@@ -10,7 +10,7 @@ tasks:
         desc: 
             Lint, compiles and runs a c file
         cmds:
-            - powershell start out/"{{.executableName}}"
+            - out/"{{.executableName}}"
 
     compile:
         desc:
