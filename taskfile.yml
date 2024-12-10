@@ -6,6 +6,7 @@ vars:
 
 tasks:
     run:
+        aliases: [dev]
         deps: [lint, compile]
         desc: 
             Lint, compiles and runs a c file
@@ -15,12 +16,19 @@ tasks:
     compile:
         aliases: [build]
         desc:
-            Creates an out folder if it doesn't exist and then runs the GCC compiler
+            Creates an out folder if it doesn't exist and then creates a developer binary
         cmds:
             - powershell md -Force out/ | powershell Out-Null
-            - powershell taskkill /f /im "{{.executableName}}" | powershell Out-Null
+            - task: kill
             - ccache gcc -o out/"{{.executableName}}".exe src/"{{.fileName}}" -O0
 
+    kill:
+        desc:
+            Kills previous binary if its open
+        cmds:
+            - powershell taskkill /f /im "{{.executableName}}" | powershell Out-Null
+        silent: true
+    
     dist:
         desc:
             Creates an optimised output binary
@@ -29,6 +37,7 @@ tasks:
             - ccache gcc -o dist/"{{.executableName}}".exe src/"{{.fileName}}" -O2
     
     compress:
+        aliases: [comp]
         desc:
             Creates a low file size output binary
         cmds:

@@ -1,6 +1,6 @@
 ## Requirements
 
-*GCC and other important C resources* = [link](https://installc.org/)
+*GCC and other important C resources* = [link](https://www.mingw-w64.org/)
 
 *Taskfile for command line scripts* = [link](https://taskfile.dev/installation/)
 
@@ -14,7 +14,7 @@
 
 Note this requires [python 3](https://www.python.org/downloads/) and [chocolatey](https://chocolatey.org/install) to be installed, furthermore make sure you are in an elevated terminal
 
-    start https://tinyurl.com/install-c
+    choco install mingw
 
     choco install go-task
 
