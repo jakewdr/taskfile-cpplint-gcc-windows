@@ -2,7 +2,7 @@ version: "3.17"
 
 vars:
     fileName: main.c
-    executableName: executable.exe
+    executableName: executable
 
 tasks:
     run:
@@ -10,22 +10,31 @@ tasks:
         desc: 
             Lint, compiles and runs a c file
         cmds:
-            - out/"{{.executableName}}"
+            - out/"{{.executableName}}".exe
 
     compile:
+        aliases: [build]
         desc:
             Creates an out folder if it doesn't exist and then runs the GCC compiler
         cmds:
             - powershell md -Force out/ | powershell Out-Null
             - powershell taskkill /f /im "{{.executableName}}" | powershell Out-Null
-            - ccache gcc -o out/"{{.executableName}}" src/"{{.fileName}}" -O0
+            - ccache gcc -o out/"{{.executableName}}".exe src/"{{.fileName}}" -O0
 
     dist:
         desc:
-            Creates an optimised output executable
+            Creates an optimised output binary
         cmds:
             - powershell md -Force dist/ | powershell Out-Null
-            - ccache gcc -o dist/"{{.executableName}}" src/"{{.fileName}}" -O2
+            - ccache gcc -o dist/"{{.executableName}}".exe src/"{{.fileName}}" -O2
+    
+    compress:
+        desc:
+            Creates a low file size output binary
+        cmds:
+            - powershell md -Force dist/ | powershell Out-Null
+            - ccache gcc -o dist/"{{.executableName}}".upx.exe src/"{{.fileName}}" -Os
+            - upx --best dist/"{{.executableName}}".upx.exe
         
     lint:
         desc:

@@ -8,15 +8,19 @@
 
 *Ccache for recompile cache* = [link](https://ccache.dev/download.html)
 
+*UPX for compressed binaries* = [link](https://upx.github.io/)
+
 ### From the command line
 
-Note this requires [python 3](https://www.python.org/downloads/) and [chocolatey](https://chocolatey.org/install) to be installed
+Note this requires [python 3](https://www.python.org/downloads/) and [chocolatey](https://chocolatey.org/install) to be installed, furthermore make sure you are in an elevated terminal
 
     start https://tinyurl.com/install-c
 
     choco install go-task
 
     choco install ccache
+
+    choco install upx
 
     pip install cpplint
 
